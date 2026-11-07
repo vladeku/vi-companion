@@ -52,7 +52,7 @@
 <p>The app has no account and no sign-in. It never asks for your name, email address, contacts, photos or location.</p>
 <h2>What the app collects</h2>
 <p><strong>Usage data.</strong> The app tells Amplitude, an analytics service, how you use it: for example, which tabs you open, that you picked a console, turned on reminders or code alerts, or opened a store page. It also sends your console choice, whether reminders and code alerts are on, and how many of the app's widgets you use. With each event Amplitude gets an identifier for your device, the app version and basic device details such as the iPhone model, iOS version and language. Amplitude also receives your IP address and works out your approximate location from it.</p>
-<p><strong>Code alerts.</strong> Only if you turn on code alerts, the app registers your iPhone with Firebase Cloud Messaging, a Google service, so I can send you a notification when cheat codes are added. Firebase receives a push token and an installation identifier for the app on your device, with the device and app details it needs to deliver the message. Until you turn on code alerts, the app does not contact Firebase Cloud Messaging.</p>
+<p><strong>Code alerts.</strong> Only if you allow notifications, the app registers your iPhone with Firebase Cloud Messaging, a Google service, so I can send you a notification when cheat codes are added. Firebase receives a push token and an installation identifier for the app on your device, with the device and app details it needs to deliver the message. Until you allow notifications, the app does not contact Firebase Cloud Messaging.</p>
 <p><strong>Content downloads.</strong> The app downloads its launch dates, facts and cheat codes from a file on Firebase Hosting, a Google service. Like any web server, it records your IP address and the time of the request.</p>
 <h2>What the app does not do</h2>
 <ul>
@@ -63,7 +63,7 @@
 </ul>
 <h2>Permissions</h2>
 <ul>
-  <li><strong>Notifications:</strong> for launch reminders and, if you turn them on, code alerts.</li>
+  <li><strong>Notifications:</strong> for launch reminders and code alerts.</li>
   <li><strong>Live Activities:</strong> to keep the countdown on your Lock Screen and in the Dynamic Island on launch night.</li>
 </ul>
 <p>You can turn each one off in Settings.</p>
