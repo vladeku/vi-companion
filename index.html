@@ -3,48 +3,468 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Backseat</title>
-<meta name="description" content="Countdown, pre-load and cheat codes for GTA VI. An unofficial fan app.">
+<title>Backseat: cheat codes, news and guides for GTA 6</title>
+<meta name="description" content="Cheat codes for GTA 6 with the buttons for your PS5 or Xbox, plus the day's news and short guides, on your iPhone. An unofficial fan app, free on the App Store.">
 <meta name="theme-color" content="#0F0A1C">
+<meta name="apple-itunes-app" content="app-id=6830724358">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://getbackseat.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Backseat">
+<meta property="og:title" content="Backseat: every GTA 6 cheat code, button by button">
+<meta property="og:description" content="Cheat codes with the buttons for your PS5 or Xbox, the day's news and short guides. An unofficial fan app for iPhone.">
+<meta property="og:url" content="https://getbackseat.app/">
+<meta property="og:image" content="https://getbackseat.app/assets/landing/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/fonts/anton-latin.woff" as="font" type="font/woff" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Backseat",
+  "url": "https://getbackseat.app/",
+  "description": "Cheat codes for GTA 6 with the buttons for your PS5 or Xbox, the day's news and short guides. An unofficial fan app.",
+  "operatingSystem": "iOS 26.0 or later",
+  "applicationCategory": "EntertainmentApplication",
+  "installUrl": "https://apps.apple.com/app/id6830724358",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
 <style>
-  :root { --bg: #0F0A1C; --ink: #F5F5F7; --muted: #A49FB3; --line: #2A2240; --accent: #FF4F9A; }
+  @font-face {
+    font-family: "Anton";
+    src: url("assets/fonts/anton-latin.woff") format("woff");
+    font-display: swap;
+  }
+
+  :root {
+    /* The app's own palette (Shared/Palette.swift) and the icon's violet dawn sky. */
+    --night: #0F0A1C;
+    --dusk: #29123D;
+    --violet: #6E3DF2;
+    --pink: #FF4F99;
+    --orange: #FF9E42;
+    --teal: #33DBCC;
+    --ink: #F5F5F7;
+    --muted: #A49FB3;
+    --faint: #756E8A;
+    --line: rgba(255, 255, 255, .08);
+    --card: rgba(255, 255, 255, .05);
+
+    /* Controller face buttons, in the colours the app draws them. */
+    --k-triangle: #30D158;
+    --k-circle: #FF453A;
+    --k-square: #FF4F7E;
+    --k-cross: #3E9BFF;
+
+    --display: "Anton", Impact, "Arial Narrow", sans-serif;
+    --text: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Inter, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+    --gutter: max(16px, min(5vw, 40px));
+    --max: 1160px;
+  }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; color-scheme: dark; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Inter, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
-  a { color: var(--accent); }
-  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
-  .shell { width: 100%; max-width: 760px; margin: 0 auto; padding-inline: 24px; }
-  .top { display: flex; align-items: center; justify-content: space-between; padding-block: 18px; border-bottom: 1px solid var(--line); }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-size: 18px; font-weight: 800; letter-spacing: -.02em; }
-  .brand img { width: 34px; height: 34px; border-radius: 8px; }
-  article { padding-block: 40px 64px; }
-  h1 { font-size: clamp(32px, 5vw, 44px); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
-  .date { color: var(--muted); font-size: 15px; margin-top: 10px; }
-  h2 { font-size: 21px; font-weight: 800; letter-spacing: -.02em; margin: 36px 0 10px; }
-  p { font-size: 17px; margin-top: 12px; }
-  ul { margin: 10px 0 0 22px; font-size: 17px; }
-  li { margin-top: 6px; }
-  footer { border-top: 1px solid var(--line); padding-block: 24px 40px; color: var(--muted); font-size: 14px; }
-  footer nav { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 10px; }
+  html { -webkit-text-size-adjust: 100%; color-scheme: dark; scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body { font-family: var(--text); background: var(--night); color: var(--ink); line-height: 1.5; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+  img, svg { display: block; }
+  a { color: inherit; }
+  a:focus-visible, summary:focus-visible { outline: 3px solid var(--pink); outline-offset: 4px; border-radius: 10px; }
+  .wrap { width: 100%; max-width: calc(var(--max) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+  .display {
+    font-family: var(--display);
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: .92;
+    letter-spacing: .005em;
+    background: linear-gradient(180deg, #B6A0FF 0%, #F6E5F3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-wrap: balance;
+  }
+  .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+  /* Status chips, as the app draws them next to every code and fact. */
+  .chip { display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+  .chip-confirmed { color: var(--teal); background: rgba(51, 219, 204, .14); }
+  .chip-reported { color: var(--orange); background: rgba(255, 158, 66, .14); }
+  .chip-expected { color: var(--muted); background: rgba(164, 159, 179, .14); }
+
+  .store { display: inline-block; border-radius: 12px; line-height: 0; }
+  .store img { height: 56px; width: auto; }
+
+  /* Header */
+  .top { position: sticky; top: 0; z-index: 10; background: rgba(15, 10, 28, .72); -webkit-backdrop-filter: saturate(160%) blur(18px); backdrop-filter: saturate(160%) blur(18px); border-bottom: 1px solid var(--line); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-size: 17px; font-weight: 800; letter-spacing: -.01em; }
+  .brand img { width: 32px; height: 32px; border-radius: 8px; }
+  .top nav { display: flex; align-items: center; gap: 28px; font-size: 15px; }
+  .top nav a { text-decoration: none; color: var(--muted); }
+  .top nav a:hover { color: var(--ink); }
+  .top nav .get { color: var(--ink); font-weight: 600; padding: 7px 14px; border-radius: 999px; background: rgba(255, 255, 255, .1); }
+  .top nav .get:hover { background: rgba(255, 255, 255, .16); }
+
+  /* Hero: the phone rises out of the dawn at the bottom edge. */
+  .hero { position: relative; overflow: hidden; background:
+      radial-gradient(70% 55% at 72% 108%, rgba(110, 61, 242, .75), transparent 70%),
+      radial-gradient(50% 40% at 20% 110%, rgba(255, 79, 153, .18), transparent 70%),
+      linear-gradient(180deg, var(--night) 0%, var(--dusk) 70%, #3A1A63 100%); }
+  .hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 79, 153, .7) 30%, rgba(255, 158, 66, .8) 55%, transparent); }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 48px; align-items: end; }
+  .hero-copy { padding-block: 72px 80px; }
+  .hero h1 { font-size: clamp(54px, 7.4vw, 96px); margin-top: 18px; }
+  .lede { font-size: clamp(17px, 1.6vw, 20px); color: #CFC9DC; max-width: 34em; margin-top: 28px; }
+  .cta { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 30px; }
+  .cta-note { font-size: 14px; color: var(--muted); }
+  .hero-phone { align-self: end; justify-self: center; width: min(100%, 420px); padding-top: 48px; }
+  .hero-phone img { width: 100%; height: auto; filter: drop-shadow(0 -20px 60px rgba(110, 61, 242, .45)); }
+
+  /* The combo: the signature. One code, pressed button by button. */
+  .combo { margin-top: 34px; padding: 18px 20px 16px; border-radius: 24px; background: rgba(255, 255, 255, .055); border: 1px solid var(--line); max-width: 600px; }
+  .combo-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .combo-name { font-size: 17px; font-weight: 700; }
+  .combo-console { margin-left: auto; font-size: 13px; color: var(--muted); }
+  .keys { list-style: none; display: flex; align-items: center; gap: clamp(4px, 1.1vw, 10px); margin-top: 14px; font-size: clamp(26px, 4.4vw, 44px); }
+  .key { flex: none; width: 1em; height: 1em; color: var(--ink); display: grid; place-items: center; transition: opacity .18s ease, transform .12s ease; }
+  .key svg { width: 1em; height: 1em; overflow: visible; }
+  .key.triangle { color: var(--k-triangle); }
+  .key.circle { color: var(--k-circle); }
+  .key.square { color: var(--k-square); }
+  .key.cross { color: var(--k-cross); }
+  .shoulder { width: auto; height: .74em; min-width: 1.18em; padding: 0 .12em; border: max(2px, .055em) solid currentColor; border-radius: .14em .14em .3em .3em; font-size: inherit; }
+  .shoulder span { font-size: .38em; font-weight: 800; letter-spacing: .02em; line-height: 1; }
+  .combo-dial { display: flex; align-items: center; gap: 10px; margin-top: 14px; font-size: 15px; color: var(--muted); transition: opacity .3s ease; }
+  .combo-dial svg { width: 18px; height: 18px; flex: none; }
+  .combo-dial b { font-family: var(--mono); font-size: 16px; font-weight: 600; color: var(--ink); letter-spacing: .01em; }
+  .js .key { opacity: .26; }
+  .js .key.on { opacity: 1; }
+  .js .key.now { transform: translateY(.06em) scale(.9); }
+  .js .combo .chip, .js .combo-dial { opacity: 0; transition: opacity .3s ease; }
+  .js .combo.done .chip, .js .combo.done .combo-dial { opacity: 1; }
+
+  /* Feature panels */
+  .features { display: grid; gap: clamp(20px, 3vw, 32px); padding-block: clamp(56px, 8vw, 104px) 0; }
+  .panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 400px); column-gap: clamp(32px, 6vw, 88px); padding-inline: clamp(24px, 6vw, 80px); border-radius: 32px; overflow: hidden; border: 1px solid var(--line); background:
+      radial-gradient(48% 70% at 80% 118%, rgba(110, 61, 242, .6), transparent 72%),
+      linear-gradient(180deg, #150D25 0%, #1F1033 100%); }
+  .panel.flip { grid-template-columns: minmax(0, 400px) minmax(0, 1fr); background:
+      radial-gradient(48% 70% at 20% 118%, rgba(110, 61, 242, .6), transparent 72%),
+      linear-gradient(180deg, #150D25 0%, #1F1033 100%); }
+  .panel.flip .panel-phone { order: -1; }
+  .panel-copy { align-self: center; padding-block: clamp(40px, 6vw, 72px); }
+  .panel h2 { font-size: clamp(42px, 5vw, 64px); margin-top: 14px; }
+  .panel-copy > p:not(.eyebrow) { font-size: 17px; color: #CFC9DC; margin-top: 22px; max-width: 32em; }
+  .panel-phone { align-self: end; padding-top: 56px; }
+  .panel-phone img { width: 100%; height: auto; }
+
+  .points { margin-top: 28px; display: grid; gap: 18px; max-width: 32em; }
+  .points div { padding-left: 16px; border-left: 2px solid rgba(255, 79, 153, .5); }
+  .points dt { font-weight: 700; font-size: 16px; }
+  .points dd { color: var(--muted); font-size: 15px; margin-top: 2px; }
+
+  .legend { list-style: none; margin-top: 28px; display: grid; gap: 14px; max-width: 32em; }
+  .legend li { display: grid; grid-template-columns: 120px 1fr; gap: 14px; align-items: baseline; font-size: 15px; color: var(--muted); }
+  .legend .chip { justify-self: start; }
+
+  /* Also in the app */
+  .extras { padding-block: clamp(56px, 8vw, 96px) 0; }
+  .extras h2 { font-size: 13px; }
+  .extras ul { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 22px; border-top: 1px solid var(--line); }
+  .extras li { padding: 22px 24px 0 0; }
+  .extras li + li { padding-left: 24px; border-left: 1px solid var(--line); }
+  .extras b { display: block; font-size: 17px; }
+  .extras span { display: block; color: var(--muted); font-size: 15px; margin-top: 4px; }
+
+  /* Questions */
+  .faq { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: clamp(32px, 6vw, 88px); padding-block: clamp(72px, 10vw, 128px); }
+  .faq h2 { font-size: clamp(42px, 5vw, 64px); position: sticky; top: 96px; }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq details:first-child { border-top: 1px solid var(--line); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 24px; padding: 20px 0; font-size: 18px; font-weight: 600; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; flex: none; font-size: 24px; line-height: 1; font-weight: 300; color: var(--muted); transition: transform .2s ease; }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details p { color: #CFC9DC; font-size: 16px; padding: 0 40px 22px 0; max-width: 40em; }
+
+  /* Last call */
+  .last { position: relative; overflow: hidden; text-align: center; padding-block: clamp(72px, 10vw, 120px); background:
+      radial-gradient(60% 80% at 50% 120%, rgba(110, 61, 242, .7), transparent 70%),
+      linear-gradient(180deg, var(--night), var(--dusk)); }
+  .last img.icon { width: 88px; height: 88px; border-radius: 20px; margin: 0 auto; box-shadow: 0 18px 50px rgba(110, 61, 242, .45); }
+  .last h2 { font-size: clamp(44px, 6.4vw, 84px); margin: 28px auto 0; max-width: 11em; }
+  .last p { color: #CFC9DC; font-size: 17px; margin-top: 18px; }
+  .last .store { margin-top: 30px; }
+
+  footer { border-top: 1px solid var(--line); padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
+  footer nav { display: flex; gap: 22px; flex-wrap: wrap; margin-bottom: 18px; font-size: 15px; }
+  footer nav a { color: var(--muted); text-decoration: none; }
+  footer nav a:hover { color: var(--ink); }
+  footer p + p { margin-top: 8px; }
+  footer p { max-width: 62em; }
+
+  @media (max-width: 900px) {
+    .top nav a:not(.get) { display: none; }
+    .hero-grid { grid-template-columns: 1fr; gap: 0; }
+    .hero-copy { padding-block: 44px 8px; }
+    .hero-phone { width: min(86%, 360px); padding-top: 36px; }
+    .panel, .panel.flip { grid-template-columns: 1fr; padding-inline: 22px; border-radius: 26px; }
+    .panel.flip .panel-phone { order: 0; }
+    .panel-copy { padding-block: 36px 0; }
+    .panel-phone { justify-self: center; width: min(88%, 360px); padding-top: 36px; }
+    .extras ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .extras li, .extras li + li { padding: 20px 16px 20px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+    .extras li:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
+    .faq { grid-template-columns: 1fr; }
+    .faq h2 { position: static; }
+  }
+  @media (max-width: 520px) {
+    .hero h1 { font-size: min(12.6vw, 54px); }
+    .combo { padding: 16px 14px 14px; border-radius: 20px; }
+    .combo-console { display: none; }
+    .legend li { grid-template-columns: 1fr; gap: 6px; }
+    .extras ul { grid-template-columns: 1fr; }
+    .extras li:nth-child(even) { padding-left: 0; border-left: 0; }
+    .faq details p { padding-right: 0; }
+    .store img { height: 52px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .key, .combo-dial, .js .combo .chip { transition: none; }
+  }
 </style>
 </head>
 <body>
-<header class="shell top">
-  <a class="brand" href=""><img src="assets/icon-256.png" alt="" width="34" height="34">Backseat</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="k-ring" viewBox="0 0 28 28"><circle cx="14" cy="14" r="11.6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="k-triangle" viewBox="0 0 28 28"><use href="#k-ring"/><path d="M14 8.6 19.2 17.6H8.8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="k-circle" viewBox="0 0 28 28"><use href="#k-ring"/><circle cx="14" cy="14" r="5.4" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="k-cross" viewBox="0 0 28 28"><use href="#k-ring"/><path d="M10 10l8 8M18 10l-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="k-square" viewBox="0 0 28 28"><use href="#k-ring"/><rect x="9.3" y="9.3" width="9.4" height="9.4" rx="1.4" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <!-- The d-pad with the pressed arm filled, like SF Symbols' dpad.right.filled. -->
+    <symbol id="k-dpad-right" viewBox="0 0 28 28">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+        <path d="M10.4 3.2h7.2v6.4L14 13.2l-3.6-3.6Z"/>
+        <path d="M10.4 24.8h7.2v-6.4L14 14.8l-3.6 3.6Z"/>
+        <path d="M3.2 10.4v7.2h6.4l3.6-3.6-3.6-3.6Z"/>
+      </g>
+      <path d="M24.8 10.4v7.2h-6.4L14.8 14l3.6-3.6Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="k-dpad-left" viewBox="0 0 28 28">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+        <path d="M10.4 3.2h7.2v6.4L14 13.2l-3.6-3.6Z"/>
+        <path d="M10.4 24.8h7.2v-6.4L14 14.8l-3.6 3.6Z"/>
+        <path d="M24.8 10.4v7.2h-6.4L14.8 14l3.6-3.6Z"/>
+      </g>
+      <path d="M3.2 10.4v7.2h6.4l3.6-3.6-3.6-3.6Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="k-phone" viewBox="0 0 24 24"><path d="M6.6 3.5 9 3.2l1.6 4.1-2 1.5a12 12 0 0 0 6.6 6.6l1.5-2 4.1 1.6-.3 2.4a2 2 0 0 1-2.1 1.7A16.6 16.6 0 0 1 4.9 5.6a2 2 0 0 1 1.7-2.1Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/icon-256.png" alt="" width="32" height="32">Backseat</a>
+    <nav aria-label="Sections">
+      <a href="#codes">Codes</a>
+      <a href="#news">News</a>
+      <a href="#guides">Guides</a>
+      <a href="#questions">Questions</a>
+      <a class="get" href="https://apps.apple.com/app/id6830724358">Get the app</a>
+    </nav>
+  </div>
 </header>
-<main class="shell">
-<article>
-<h1>Backseat</h1>
-<p class="date">Countdown, pre-load and cheat codes for GTA VI on PlayStation 5 and Xbox Series X|S.</p>
-<p>Backseat counts down to the minute GTA VI unlocks on your console, in your own time zone. It reminds you when pre-load opens, keeps the timer on your Lock Screen on launch night, and shows cheat codes with the buttons for your console once players find them.</p>
-</article>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Unofficial companion for GTA VI</p>
+        <h1 class="display">Every code, button by button</h1>
+
+        <figure class="combo" aria-label="Invincibility on PlayStation 5: Right, Cross, Right, Left, Right, R1, Right, Left, Cross, Triangle. Or dial 1-999-724-654-5537 on the in-game phone.">
+          <figcaption class="combo-head" aria-hidden="true">
+            <span class="combo-name">Invincibility</span>
+            <span class="chip chip-confirmed">Confirmed</span>
+            <span class="combo-console">PlayStation 5</span>
+          </figcaption>
+          <ol class="keys" aria-hidden="true">
+            <li class="key"><svg><use href="#k-dpad-right"/></svg></li>
+            <li class="key cross"><svg><use href="#k-cross"/></svg></li>
+            <li class="key"><svg><use href="#k-dpad-right"/></svg></li>
+            <li class="key"><svg><use href="#k-dpad-left"/></svg></li>
+            <li class="key"><svg><use href="#k-dpad-right"/></svg></li>
+            <li class="key shoulder"><span>R1</span></li>
+            <li class="key"><svg><use href="#k-dpad-right"/></svg></li>
+            <li class="key"><svg><use href="#k-dpad-left"/></svg></li>
+            <li class="key cross"><svg><use href="#k-cross"/></svg></li>
+            <li class="key triangle"><svg><use href="#k-triangle"/></svg></li>
+          </ol>
+          <p class="combo-dial" aria-hidden="true"><svg><use href="#k-phone"/></svg>or dial <b>1-999-724-654-5537</b></p>
+        </figure>
+
+        <p class="lede">Cheat codes with the buttons for your PlayStation&nbsp;5 or Xbox Series&nbsp;X|S, plus the day’s news and short guides. Each one links to its source.</p>
+        <div class="cta">
+          <a class="store" href="https://apps.apple.com/app/id6830724358"><img src="https://tools.applemarketingtools.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" width="168" height="56"></a>
+          <p class="cta-note">Free · iPhone with iOS 26</p>
+        </div>
+      </div>
+      <div class="hero-phone">
+        <img src="assets/landing/phone-codes-player.webp" width="840" height="1029" fetchpriority="high"
+          alt="The Codes screen in Backseat with PlayStation 5 picked: Invincibility and Max health and armor, each with its buttons and a number to dial.">
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap features">
+    <section class="panel" id="codes" aria-labelledby="codes-title">
+      <div class="panel-copy">
+        <p class="eyebrow">Cheat codes</p>
+        <h2 class="display" id="codes-title">Your console, your buttons</h2>
+        <p>Pick PlayStation&nbsp;5 or Xbox Series&nbsp;X|S once, and the app shows each code as the buttons on your controller, in the order you press them. If the game also takes a code on the in-game phone, you get the number to dial.</p>
+        <dl class="points">
+          <div><dt>No app update for new codes</dt><dd>We add codes on our side, so you never update the app for them. Turn on notifications and we’ll tell you when new ones arrive.</dd></div>
+          <div><dt>Player, vehicles, weapons, world</dt><dd>Codes sit in groups, so you find the helicopter without scrolling past the armor.</dd></div>
+        </dl>
+      </div>
+      <div class="panel-phone">
+        <img src="assets/landing/phone-codes-vehicles.webp" width="840" height="984" loading="lazy"
+          alt="Vehicle codes in Backseat: Attack helicopter and Sports car with PlayStation 5 buttons and phone numbers.">
+      </div>
+    </section>
+
+    <section class="panel flip" id="news" aria-labelledby="news-title">
+      <div class="panel-copy">
+        <p class="eyebrow">News</p>
+        <h2 class="display" id="news-title">The day’s news in a few lines</h2>
+        <p>Patches, platform news and what Rockstar said, in our own words with a link to the source. Pull down on the screen to check for updates.</p>
+        <ul class="legend">
+          <li><span class="chip chip-confirmed">Confirmed</span>Rockstar, Sony or Microsoft said it, or it’s in the game.</li>
+          <li><span class="chip chip-reported">Reported</span>The press or players say so, and nobody has confirmed it yet.</li>
+          <li><span class="chip chip-expected">Expected</span>Earlier games had it, so it will probably come back.</li>
+        </ul>
+      </div>
+      <div class="panel-phone">
+        <img src="assets/landing/phone-intel-news.webp" width="840" height="905" loading="lazy"
+          alt="News in Backseat: First patch is out, marked Reported, and Remote Play on both consoles, marked Confirmed, each with its source.">
+      </div>
+    </section>
+
+    <section class="panel" id="guides" aria-labelledby="guides-title">
+      <div class="panel-copy">
+        <p class="eyebrow">Guides</p>
+        <h2 class="display" id="guides-title">Tips that save you a reload</h2>
+        <p>Find out why a story mission won’t start until you have the cash, or why a new hat won’t shake off the police. Each tip fits on one card and links to where it came from.</p>
+      </div>
+      <div class="panel-phone">
+        <img src="assets/landing/phone-intel-guides.webp" width="840" height="839" loading="lazy"
+          alt="Guides in Backseat: Money opens story missions and Police remember you.">
+      </div>
+    </section>
+  </div>
+
+  <section class="wrap extras" aria-labelledby="extras-title">
+    <h2 class="eyebrow" id="extras-title">Also in the app</h2>
+    <ul>
+      <li><b>PS5 and Xbox</b><span>Switch consoles from the badge at the top of the screen.</span></li>
+      <li><b>Widgets</b><span>On the Home Screen and the Lock Screen.</span></li>
+      <li><b>23 languages</b><span>English, Español, Deutsch, Русский, 日本語 and 18 more.</span></li>
+      <li><b>No account</b><span>Nothing to sign up for. Open it and look up a code.</span></li>
+    </ul>
+  </section>
+
+  <section class="wrap faq" id="questions" aria-labelledby="faq-title">
+    <h2 class="display" id="faq-title">Questions</h2>
+    <div>
+      <details>
+        <summary>Is Backseat made by Rockstar?</summary>
+        <p>No. Backseat is an unofficial fan app from an independent developer. It isn’t affiliated with, endorsed or sponsored by Rockstar Games or Take-Two Interactive.</p>
+      </details>
+      <details>
+        <summary>What are the numbers under some codes?</summary>
+        <p>Some cheats also work through your character’s phone in the game. Open the phone, type the number on its keypad and call. The cheat turns on the same way as with the buttons. When a code works both ways, the app shows both.</p>
+      </details>
+      <details>
+        <summary>Do I need to update the app to get new codes?</summary>
+        <p>No. Codes, news and guides load from our server when you open the app. Pull down on any screen to check now.</p>
+      </details>
+      <details>
+        <summary>Which consoles does it cover?</summary>
+        <p>PlayStation 5, including PS5 Pro, and Xbox Series X|S. Pick yours the first time you open the app and change it any time from the badge at the top of the screen.</p>
+      </details>
+      <details>
+        <summary>What does it cost?</summary>
+        <p>Backseat is free to download on the App Store and works on any iPhone with iOS 26.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="last" aria-labelledby="last-title">
+    <div class="wrap">
+      <img class="icon" src="assets/icon-256.png" alt="" width="88" height="88">
+      <h2 class="display" id="last-title">Keep it next to the controller</h2>
+      <p>Free on the App Store for iPhone.</p>
+      <a class="store" href="https://apps.apple.com/app/id6830724358"><img src="https://tools.applemarketingtools.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" width="168" height="56" loading="lazy"></a>
+    </div>
+  </section>
 </main>
-<footer class="shell">
-  <nav><a href="privacy/">Privacy Policy</a><a href="terms/">Terms of Use</a><a href="support/">Support</a></nav>
-  <p>Backseat is an unofficial fan app. It is not affiliated with, endorsed or sponsored by Rockstar Games or Take-Two Interactive.</p>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="Legal"><a href="privacy/">Privacy Policy</a><a href="terms/">Terms of Use</a><a href="support/">Support</a><a href="mailto:support@getbackseat.app">support@getbackseat.app</a></nav>
+    <p>Backseat is an unofficial fan app. It is not affiliated with, endorsed or sponsored by Rockstar Games or Take-Two Interactive. Grand Theft Auto and GTA are trademarks of Take-Two Interactive Software, Inc.</p>
+    <p>PlayStation and PS5 are trademarks of Sony Interactive Entertainment Inc. Xbox and Xbox Series X|S are trademarks of the Microsoft group of companies. Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.</p>
+  </div>
 </footer>
+
+<script>
+  // The combo in the hero: presses light up one by one, then the status and the number appear.
+  (function () {
+    var combo = document.querySelector(".combo");
+    if (!combo || !("IntersectionObserver" in window)) return;
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reduce.matches) return;
+    document.documentElement.classList.add("js");
+    var keys = combo.querySelectorAll(".key");
+    var step = 0, timer = null;
+
+    function show(count) {
+      for (var i = 0; i < keys.length; i++) {
+        keys[i].classList.toggle("on", i < count);
+        keys[i].classList.toggle("now", i === count - 1);
+      }
+      combo.classList.toggle("done", count >= keys.length);
+    }
+    function tick() {
+      step += 1;
+      if (step <= keys.length) {
+        show(step);
+        timer = setTimeout(function () {
+          keys[step - 1].classList.remove("now");
+          timer = setTimeout(tick, 150);
+        }, 120);
+      } else {
+        timer = setTimeout(function () { step = 0; show(0); timer = setTimeout(tick, 700); }, 2800);
+      }
+    }
+    function stop() { clearTimeout(timer); timer = null; }
+
+    new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) { if (!timer) { step = 0; show(0); timer = setTimeout(tick, 500); } }
+      else { stop(); show(keys.length); }
+    }).observe(combo);
+    reduce.addEventListener("change", function (e) {
+      if (e.matches) { stop(); document.documentElement.classList.remove("js"); show(keys.length); }
+    });
+  })();
+</script>
 </body>
 </html>
