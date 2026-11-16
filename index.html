@@ -121,17 +121,17 @@
   .hero-copy { padding-block: 72px 80px; }
   .hero h1 { font-size: clamp(54px, 7vw, 92px); margin-top: 18px; }
   .lede { font-size: clamp(17px, 1.6vw, 20px); color: #CFC9DC; max-width: 34em; margin-top: 28px; }
-  .cta { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 30px; }
+  .cta { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 30px; }
   .cta-note { font-size: 14px; color: var(--muted); }
   .hero-phone { align-self: end; justify-self: center; width: min(100%, 420px); padding-top: 48px; }
   .hero-phone img { width: 100%; height: auto; filter: drop-shadow(0 -20px 60px rgba(110, 61, 242, .45)); }
 
   /* The combo: the signature. One code, pressed button by button. */
-  .combo { margin-top: 34px; padding: 18px 20px 16px; border-radius: 24px; background: rgba(255, 255, 255, .055); border: 1px solid var(--line); max-width: 600px; }
+  .combo { margin-top: 34px; padding: 18px 20px 16px; border-radius: 24px; background: rgba(255, 255, 255, .055); border: 1px solid var(--line); max-width: 600px; container-type: inline-size; }
   .combo-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .combo-name { font-size: 17px; font-weight: 700; }
   .combo-console { margin-left: auto; font-size: 13px; color: var(--muted); }
-  .keys { list-style: none; display: flex; align-items: center; gap: clamp(4px, 1.1vw, 10px); margin-top: 14px; font-size: clamp(26px, 4.4vw, 44px); }
+  .keys { list-style: none; display: flex; align-items: center; gap: min(10px, 1.5cqi); margin-top: 14px; font-size: min(44px, 8cqi); }
   .key { flex: none; width: 1em; height: 1em; color: var(--ink); display: grid; place-items: center; transition: opacity .18s ease, transform .12s ease; }
   .key svg { width: 1em; height: 1em; overflow: visible; }
   .key.triangle { color: var(--k-triangle); }
@@ -190,8 +190,7 @@
       linear-gradient(180deg, var(--night), var(--dusk)); }
   .last img.icon { width: 88px; height: 88px; border-radius: 20px; margin: 0 auto; box-shadow: 0 18px 50px rgba(110, 61, 242, .45); }
   .last h2 { font-size: clamp(44px, 6.4vw, 84px); margin: 28px auto 0; max-width: 11em; }
-  .last p { color: #CFC9DC; font-size: 17px; margin-top: 18px; }
-  .last .store { margin-top: 30px; }
+  .last .cta { align-items: center; margin-top: 34px; }
 
   footer { border-top: 1px solid var(--line); padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
   footer nav { display: flex; gap: 22px; flex-wrap: wrap; margin-bottom: 18px; font-size: 15px; }
@@ -300,7 +299,7 @@
         <p class="lede">Backseat shows cheat codes with the buttons for your PlayStation&nbsp;5 or Xbox Series&nbsp;X|S. You also get the day’s news and short guides, each with a link to its source.</p>
         <div class="cta">
           <a class="store" href="https://apps.apple.com/app/id6830724358"><img src="assets/app-store-badge.svg" alt="Download on the App Store" width="168" height="56"></a>
-          <p class="cta-note">Free on the App Store for iPhone</p>
+          <p class="cta-note">Free for iPhone. No account needed.</p>
         </div>
       </div>
       <div class="hero-phone">
@@ -387,8 +386,10 @@
     <div class="wrap">
       <img class="icon" src="assets/icon-256.png" alt="" width="88" height="88">
       <h2 class="display" id="last-title">Keep it next to the controller</h2>
-      <p>Free on the App Store for iPhone</p>
-      <a class="store" href="https://apps.apple.com/app/id6830724358"><img src="assets/app-store-badge.svg" alt="Download on the App Store" width="168" height="56" loading="lazy"></a>
+      <div class="cta">
+        <a class="store" href="https://apps.apple.com/app/id6830724358"><img src="assets/app-store-badge.svg" alt="Download on the App Store" width="168" height="56" loading="lazy"></a>
+        <p class="cta-note">Free for iPhone. Pick your console and you’re set.</p>
+      </div>
     </div>
   </section>
 </main>
