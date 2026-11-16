@@ -120,6 +120,11 @@
   .hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 48px; align-items: end; }
   .hero-copy { padding-block: 72px 80px; }
   .hero h1 { font-size: clamp(54px, 7vw, 92px); margin-top: 18px; }
+  /* Until launch night: the link to the unlock times, above the eyebrow. */
+  .notice { display: inline-flex; align-items: center; gap: 10px; max-width: 100%; margin-bottom: 22px; padding: 5px 14px 5px 5px; border-radius: 999px; font-size: 15px; font-weight: 600; text-decoration: none; background: rgba(255, 255, 255, .07); border: 1px solid var(--line); }
+  .notice:hover { background: rgba(255, 255, 255, .12); }
+  .notice b { flex: none; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: var(--violet); }
+  .notice span { color: var(--muted); }
   .lede { font-size: clamp(17px, 1.6vw, 20px); color: #CFC9DC; max-width: 34em; margin-top: 28px; }
   .cta { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 30px; }
   .cta-note { font-size: 14px; color: var(--muted); }
@@ -213,6 +218,7 @@
   }
   @media (max-width: 520px) {
     .hero h1 { font-size: min(12.6vw, 54px); }
+    .notice { font-size: 14px; gap: 8px; }
     .combo { padding: 16px 14px 14px; border-radius: 20px; }
     .combo-console { display: none; }
     .legend li { grid-template-columns: 1fr; gap: 6px; }
@@ -259,6 +265,7 @@
   <div class="wrap">
     <a class="brand" href="./"><img src="assets/icon-256.png" alt="" width="32" height="32">Backseat</a>
     <nav aria-label="Sections">
+      <a href="unlock-times/">Unlock times</a>
       <a href="#codes">Codes</a>
       <a href="#news">News</a>
       <a href="#guides">Guides</a>
@@ -272,6 +279,7 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
+        <a class="notice" href="unlock-times/"><b>Nov 19</b>When GTA VI unlocks for you <span aria-hidden="true">→</span></a>
         <p class="eyebrow">Unofficial companion for GTA VI</p>
         <h1 class="display">Cheat codes, button by button</h1>
 
