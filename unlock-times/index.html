@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>When you can play GTA VI: PS5 and Xbox unlock times · Backseat</title>
+<meta name="description" content="GTA VI unlocks at midnight local time on November 19. PS5 in the US and Canada goes by Eastern time, so the West Coast plays at 9 PM. See the time where you are.">
+<meta name="theme-color" content="#0F0A1C">
+<meta name="apple-itunes-app" content="app-id=6830724358">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://getbackseat.app/unlock-times/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Backseat">
+<meta property="og:title" content="When you can play GTA VI">
+<meta property="og:description" content="PS5 and Xbox unlock times for your time zone. In the US and Canada, PS5 opens at midnight Eastern everywhere.">
+<meta property="og:url" content="https://getbackseat.app/unlock-times/">
+<meta property="og:image" content="https://getbackseat.app/assets/unlock-times/og.png?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../assets/fonts/anton-latin.woff" as="font" type="font/woff" crossorigin>
+<style>
+  @font-face {
+    font-family: "Anton";
+    src: url("../assets/fonts/anton-latin.woff") format("woff");
+    font-display: swap;
+  }
+
+  :root {
+    /* The app's own palette (Shared/Palette.swift) and the icon's violet dawn sky, as on the landing. */
+    --night: #0F0A1C;
+    --dusk: #29123D;
+    --violet: #6E3DF2;
+    --pink: #FF4F99;
+    --orange: #FF9E42;
+    --teal: #33DBCC;
+    --ink: #F5F5F7;
+    --soft: #CFC9DC;
+    --muted: #A49FB3;
+    --faint: #756E8A;
+    --line: rgba(255, 255, 255, .08);
+
+    --display: "Anton", Impact, "Arial Narrow", sans-serif;
+    --text: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Inter, "Segoe UI", Roboto, sans-serif;
+
+    --gutter: max(16px, min(5vw, 40px));
+    --max: 860px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; color-scheme: dark; scroll-padding-top: 72px; }
+  body { font-family: var(--text); background: var(--night); color: var(--ink); line-height: 1.5; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+  img, svg { display: block; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible, select:focus-visible, summary:focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; border-radius: 10px; }
+  .wrap { width: 100%; max-width: calc(var(--max) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+  .display {
+    font-family: var(--display);
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.04;
+    letter-spacing: .005em;
+    background: linear-gradient(180deg, #B6A0FF 0%, #F6E5F3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-wrap: balance;
+  }
+  .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .pill { display: inline-flex; align-items: center; height: 28px; padding: 0 12px; border-radius: 999px; font-size: 14px; font-weight: 650; white-space: nowrap; color: var(--muted); background: rgba(164, 159, 179, .14); }
+  .pill[hidden] { display: none; }
+  .pill.ps5 { color: #5FF0E2; background: rgba(51, 219, 204, .15); }
+  .pill.xbox { color: #FFB066; background: rgba(255, 158, 66, .15); }
+
+  .store { display: inline-block; border-radius: 12px; line-height: 0; }
+  .store img { height: 56px; width: auto; }
+  .cta { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .cta-note { font-size: 15px; color: var(--muted); max-width: 26em; }
+
+  /* Header, as on the landing. */
+  .top { position: sticky; top: 0; z-index: 10; background: rgba(15, 10, 28, .72); -webkit-backdrop-filter: saturate(160%) blur(18px); backdrop-filter: saturate(160%) blur(18px); border-bottom: 1px solid var(--line); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-size: 17px; font-weight: 800; letter-spacing: -.01em; }
+  .brand img { width: 32px; height: 32px; border-radius: 8px; }
+  .get { font-size: 15px; font-weight: 600; text-decoration: none; padding: 7px 14px; border-radius: 999px; background: rgba(255, 255, 255, .1); }
+  .get:hover { background: rgba(255, 255, 255, .16); }
+
+  /* Hero: the dawn rises behind the card with the visitor's own times. */
+  .hero { position: relative; background:
+      radial-gradient(70% 45% at 60% 100%, rgba(110, 61, 242, .7), transparent 72%),
+      radial-gradient(45% 35% at 15% 102%, rgba(255, 79, 153, .16), transparent 70%),
+      linear-gradient(180deg, var(--night) 0%, var(--dusk) 72%, #3A1A63 100%);
+    padding-block: clamp(40px, 7vw, 72px) clamp(48px, 8vw, 88px); }
+  .hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 79, 153, .7) 30%, rgba(255, 158, 66, .8) 55%, transparent); }
+  .hero h1 { font-size: clamp(50px, 8.6vw, 96px); margin-top: 16px; }
+  .lede { font-size: clamp(17px, 1.8vw, 20px); color: var(--soft); max-width: 36em; margin-top: 22px; }
+  .lede b { color: var(--ink); font-weight: 650; }
+
+  .yours { margin-top: 34px; border-radius: 28px; padding: 22px clamp(18px, 3vw, 30px) 10px; background: rgba(15, 10, 28, .62); border: 1px solid rgba(255, 255, 255, .1); }
+  .yours[hidden] { display: none; }
+  .yours-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 14px 24px; flex-wrap: wrap; }
+  .field { display: grid; gap: 6px; min-width: 0; }
+  .field > span { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); }
+  .zone-pick { position: relative; max-width: 100%; }
+  .zone-pick select { appearance: none; -webkit-appearance: none; max-width: 100%; font: inherit; font-size: 17px; font-weight: 600; color: var(--ink); background: rgba(255, 255, 255, .08); border: 0; border-radius: 12px; padding: 9px 38px 9px 14px; cursor: pointer; text-overflow: ellipsis; }
+  .zone-pick::after { content: ""; position: absolute; right: 15px; top: 50%; width: 8px; height: 8px; border: solid var(--muted); border-width: 0 2px 2px 0; transform: translateY(-70%) rotate(45deg); pointer-events: none; }
+  .zone-pick select option { color: #000; }
+  .segments { display: inline-flex; padding: 3px; border-radius: 12px; background: rgba(255, 255, 255, .08); }
+  .segments button { font: inherit; font-size: 15px; font-weight: 600; color: var(--muted); background: none; border: 0; border-radius: 9px; padding: 7px 13px; cursor: pointer; white-space: nowrap; }
+  .segments button[aria-pressed="true"] { color: var(--ink); background: rgba(255, 255, 255, .14); }
+  .zone-name { font-size: 14px; color: var(--muted); margin-top: 12px; }
+
+  .unlocks { list-style: none; margin-top: 8px; }
+  .unlock { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4px 16px; padding-block: 16px; border-top: 1px solid var(--line); }
+  .unlock .console { font-size: 15px; font-weight: 650; color: var(--muted); }
+  .unlock .when { grid-column: 1; font-size: clamp(26px, 4.4vw, 36px); font-weight: 700; letter-spacing: -.01em; font-variant-numeric: tabular-nums; line-height: 1.15; }
+  .unlock .left { grid-column: 1; font-size: 15px; color: var(--soft); font-variant-numeric: tabular-nums; }
+  .unlock .pill { grid-column: 2; grid-row: 1 / span 3; }
+  .note { font-size: 14px; color: var(--muted); padding: 12px 0 14px; border-top: 1px solid var(--line); }
+
+  .after-card { margin-top: 26px; }
+
+  /* Sections below the hero */
+  section.block { padding-top: clamp(56px, 8vw, 88px); }
+  .block h2 { font-size: clamp(40px, 5.6vw, 60px); }
+  .block > p { font-size: 17px; color: var(--soft); max-width: 40em; margin-top: 16px; }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 26px; font-variant-numeric: tabular-nums; }
+  caption { caption-side: bottom; text-align: left; font-size: 14px; color: var(--muted); padding-top: 14px; }
+  th { text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); padding: 0 12px 12px 0; }
+  td { padding: 14px 12px 14px 0; border-top: 1px solid var(--line); font-size: 18px; white-space: nowrap; }
+  td:first-child { font-weight: 650; }
+  td small { font-size: 14px; color: var(--muted); margin-left: 6px; }
+  td:last-child, th:last-child { text-align: right; padding-right: 0; }
+
+  .faq { margin-top: 26px; }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq details:first-child { border-top: 1px solid var(--line); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 24px; padding: 18px 0; font-size: 18px; font-weight: 600; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; flex: none; font-size: 24px; line-height: 1; font-weight: 300; color: var(--muted); transition: transform .2s ease; }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details p { color: var(--soft); font-size: 16px; padding: 0 40px 20px 0; max-width: 40em; }
+  .faq a { color: var(--ink); }
+
+  .last { position: relative; overflow: hidden; text-align: center; margin-top: clamp(72px, 10vw, 112px); padding-block: clamp(64px, 9vw, 104px); background:
+      radial-gradient(60% 80% at 50% 120%, rgba(110, 61, 242, .7), transparent 70%),
+      linear-gradient(180deg, var(--night), var(--dusk)); }
+  .last img.icon { width: 80px; height: 80px; border-radius: 18px; margin: 0 auto; box-shadow: 0 18px 50px rgba(110, 61, 242, .45); }
+  .last h2 { font-size: clamp(42px, 6vw, 76px); margin: 26px auto 0; max-width: 11em; }
+  .last .cta { justify-content: center; flex-direction: column; margin-top: 30px; gap: 12px; }
+
+  footer { border-top: 1px solid var(--line); padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
+  footer nav { display: flex; gap: 22px; flex-wrap: wrap; margin-bottom: 18px; font-size: 15px; }
+  footer nav a { color: var(--muted); text-decoration: none; }
+  footer nav a:hover { color: var(--ink); }
+  footer p + p { margin-top: 8px; }
+  footer p { max-width: 62em; }
+
+  @media (max-width: 600px) {
+    .yours { border-radius: 22px; }
+    .yours-head { align-items: stretch; }
+    .field, .zone-pick select { width: 100%; }
+    .segments { width: 100%; }
+    .segments button { flex: 1; }
+    .col-xbox { display: none; }
+    td { font-size: 16px; padding-right: 8px; }
+    td small { display: block; margin-left: 0; font-size: 13px; }
+    .pill { height: 26px; font-size: 13px; padding: 0 10px; }
+    .faq details p { padding-right: 0; }
+    .store img { height: 52px; }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../assets/icon-256.png" alt="" width="32" height="32">Backseat</a>
+    <a class="get" href="https://apps.apple.com/app/id6830724358">Get the app</a>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">GTA VI unlock times</p>
+      <h1 class="display">When you can play GTA VI</h1>
+      <p class="lede">Both consoles unlock at midnight local time on Thursday, November&nbsp;19. <b>One exception: PlayStation Store in the US and Canada opens at midnight Eastern in every time zone.</b></p>
+
+      <div class="yours" id="yours" hidden>
+        <div class="yours-head">
+          <label class="field"><span>Your time zone</span>
+            <span class="zone-pick"><select id="zone" aria-describedby="zone-name"></select></span>
+          </label>
+          <div class="field" role="group" aria-labelledby="store-label"><span id="store-label">Console store</span>
+            <div class="segments">
+              <button type="button" data-store="na" aria-pressed="false">US or Canada</button>
+              <button type="button" data-store="other" aria-pressed="false">Another country</button>
+            </div>
+          </div>
+        </div>
+        <p class="zone-name" id="zone-name"></p>
+        <ul class="unlocks" aria-live="polite">
+          <li class="unlock" id="ps5"><span class="console">PlayStation 5</span><span class="when"></span><span class="left"></span><span class="pill" hidden></span></li>
+          <li class="unlock" id="xbox"><span class="console">Xbox Series X|S</span><span class="when"></span><span class="left"></span><span class="pill" hidden></span></li>
+        </ul>
+        <p class="note">We picked both from your browser. What counts is the store region of your PlayStation or Xbox account and the time zone set on the console.</p>
+      </div>
+
+      <div class="cta after-card">
+        <a class="store" href="https://apps.apple.com/app/id6830724358"><img src="../assets/app-store-badge.svg" alt="Download on the App Store" width="168" height="56"></a>
+        <p class="cta-note">Free for iPhone: the countdown on your Lock Screen and a Live Activity on launch night.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="block" aria-labelledby="na-title">
+      <h2 class="display" id="na-title">US and Canada</h2>
+      <p>PlayStation Store lists one moment for both countries: 05:00 GMT on November&nbsp;19, which is midnight Eastern. Xbox unlocks at midnight in each time zone. So PS5 opens earlier the further west you are, and later than Xbox in Atlantic Canada and Newfoundland.</p>
+      <table>
+        <caption>Xbox unlocks at 12:00 AM on Thursday, November&nbsp;19, in every time zone.</caption>
+        <thead><tr><th scope="col">Time zone</th><th scope="col">PS5</th><th scope="col" class="col-xbox">Xbox</th><th scope="col"><span class="sr-only">Difference</span></th></tr></thead>
+        <tbody>
+          <tr><td>Newfoundland</td><td>1:30 AM<small>Thu</small></td><td class="col-xbox">12:00 AM<small>Thu</small></td><td><span class="pill xbox">Xbox 1½ h earlier</span></td></tr>
+          <tr><td>Atlantic</td><td>1:00 AM<small>Thu</small></td><td class="col-xbox">12:00 AM<small>Thu</small></td><td><span class="pill xbox">Xbox 1 h earlier</span></td></tr>
+          <tr><td>Eastern</td><td>12:00 AM<small>Thu</small></td><td class="col-xbox">12:00 AM<small>Thu</small></td><td><span class="pill">Same time</span></td></tr>
+          <tr><td>Central</td><td>11:00 PM<small>Wed</small></td><td class="col-xbox">12:00 AM<small>Thu</small></td><td><span class="pill ps5">PS5 1 h earlier</span></td></tr>
+          <tr><td>Mountain</td><td>10:00 PM<small>Wed</small></td><td class="col-xbox">12:00 AM<small>Thu</small></td><td><span class="pill ps5">PS5 2 h earlier</span></td></tr>
+          <tr><td>Pacific</td><td>9:00 PM<small>Wed</small></td><td class="col-xbox">12:00 AM<small>Thu</small></td><td><span class="pill ps5">PS5 3 h earlier</span></td></tr>
+          <tr><td>Alaska</td><td>8:00 PM<small>Wed</small></td><td class="col-xbox">12:00 AM<small>Thu</small></td><td><span class="pill ps5">PS5 4 h earlier</span></td></tr>
+          <tr><td>Hawaii</td><td>7:00 PM<small>Wed</small></td><td class="col-xbox">12:00 AM<small>Thu</small></td><td><span class="pill ps5">PS5 5 h earlier</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="block" aria-labelledby="world-title">
+      <h2 class="display" id="world-title">Everywhere else</h2>
+      <p>PS5 and Xbox both unlock at 12:00 AM local time on Thursday, November&nbsp;19. New Zealand goes first, at 11:00 GMT on November&nbsp;18: that’s 6:00 AM Eastern and 3:00 AM Pacific.</p>
+    </section>
+
+    <section class="block" aria-labelledby="faq-title">
+      <h2 class="display" id="faq-title">Questions</h2>
+      <div class="faq">
+        <details>
+          <summary>Does it go by where I am or by my console?</summary>
+          <p>By your console. The store region of your PlayStation or Xbox account and the time zone set on the console decide when the game unlocks.</p>
+        </details>
+        <details>
+          <summary>Why does PS5 unlock before Xbox on the West Coast?</summary>
+          <p>PlayStation Store opens the game at one moment for the whole US and Canada: midnight Eastern, which is 9:00 PM on Wednesday in Pacific time. Xbox waits for midnight in your own time zone, three hours later.</p>
+        </details>
+        <details>
+          <summary>Can I download it before launch?</summary>
+          <p>Yes. Pre-load opened on November&nbsp;10 on both consoles, and the download is 212&nbsp;GB. A boxed copy holds a download code, not a disc: enter the code and the pre-load starts.</p>
+        </details>
+        <details>
+          <summary>Where do these times come from?</summary>
+          <p>From <a href="https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o">Rockstar Support</a> and the release time on <a href="https://store.playstation.com/en-us/concept/10000730">PlayStation Store</a>. If either changes, we update this page.</p>
+        </details>
+        <details>
+          <summary>What is Backseat?</summary>
+          <p>An unofficial fan app for iPhone. Before launch it counts down to the moment the game unlocks on your console, on your Lock Screen and in a Live Activity. After launch it shows cheat codes with the buttons for your controller.</p>
+        </details>
+      </div>
+    </section>
+  </div>
+
+  <section class="last" aria-labelledby="last-title">
+    <div class="wrap">
+      <img class="icon" src="../assets/icon-256.png" alt="" width="80" height="80">
+      <h2 class="display" id="last-title">Count down on your Lock Screen</h2>
+      <div class="cta">
+        <a class="store" href="https://apps.apple.com/app/id6830724358"><img src="../assets/app-store-badge.svg" alt="Download on the App Store" width="168" height="56" loading="lazy"></a>
+        <p class="cta-note">Free for iPhone.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="Legal"><a href="../">Backseat</a><a href="../privacy/">Privacy Policy</a><a href="../terms/">Terms of Use</a><a href="../support/">Support</a><a href="mailto:support@getbackseat.app">support@getbackseat.app</a></nav>
+    <p>Backseat is an unofficial fan app. It is not affiliated with, endorsed or sponsored by Rockstar Games or Take-Two Interactive. Grand Theft Auto and GTA are trademarks of Take-Two Interactive Software, Inc.</p>
+    <p>PlayStation and PS5 are trademarks of Sony Interactive Entertainment Inc. Xbox and Xbox Series X|S are trademarks of the Microsoft group of companies. Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.</p>
+  </div>
+</footer>
+
+<script>
+  // The visitor's own unlock times. The moments follow Shared/launch.json in the app's repository:
+  // PS5 in the US and Canada at one moment for both countries, every other launch at local midnight on Nov 19.
+  (function () {
+    var PS5_US_CANADA = Date.UTC(2026, 10, 19, 5, 0);   // midnight Eastern, as PlayStation Store lists it
+    var DAY = [2026, 10, 19];                            // Thursday, November 19 (months count from 0)
+    var US_CANADA = /^(US\/|Canada\/|Pacific\/Honolulu$|America\/(Kentucky|Indiana|North_Dakota)\/|America\/(New_York|Detroit|Chicago|Menominee|Denver|Boise|Phoenix|Shiprock|Los_Angeles|Anchorage|Juneau|Sitka|Metlakatla|Yakutat|Nome|Adak|Fort_Wayne|Indianapolis|Louisville|Knox_IN|Toronto|Montreal|Nipigon|Thunder_Bay|Iqaluit|Pangnirtung|Winnipeg|Rainy_River|Rankin_Inlet|Resolute|Regina|Swift_Current|Edmonton|Cambridge_Bay|Yellowknife|Inuvik|Vancouver|Whitehorse|Dawson|Dawson_Creek|Fort_Nelson|Creston|Halifax|Glace_Bay|Moncton|Goose_Bay|St_Johns|Atikokan|Coral_Harbour|Blanc-Sablon)$)/;
+
+    var card = document.getElementById("yours");
+    var select = document.getElementById("zone");
+    var buttons = card.querySelectorAll("[data-store]");
+    var params = new URLSearchParams(location.search);
+    var detected = params.get("tz") || Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
+    var store = null;
+
+    // Times in English, with the visitor's 12- or 24-hour clock.
+    var h23 = new Intl.DateTimeFormat(undefined, { hour: "numeric" }).resolvedOptions().hourCycle;
+    var locale = /^en\b/.test(navigator.language) ? navigator.language : (h23 === "h23" || h23 === "h24" ? "en-GB" : "en-US");
+
+    function offset(at, zone) {
+      var parts = {};
+      new Intl.DateTimeFormat("en-US", { timeZone: zone, hourCycle: "h23", year: "numeric", month: "numeric", day: "numeric", hour: "numeric", minute: "numeric", second: "numeric" })
+        .formatToParts(at).forEach(function (p) { parts[p.type] = +p.value; });
+      return Date.UTC(parts.year, parts.month - 1, parts.day, parts.hour % 24, parts.minute, parts.second) - Math.floor(at / 1000) * 1000;
+    }
+    function midnight(zone) {
+      var wall = Date.UTC(DAY[0], DAY[1], DAY[2]);
+      var guess = wall - offset(wall, zone);
+      return wall - offset(guess, zone);
+    }
+    function when(at, zone) {
+      return new Intl.DateTimeFormat(locale, { timeZone: zone, weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }).format(at);
+    }
+    function left(at, now) {
+      var s = Math.round((at - now) / 1000);
+      if (s <= 0) return "Unlocked. Go play.";
+      var d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), sec = s % 60;
+      var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+      return "In " + (d ? d + " d " : "") + (d || h ? h + " h " : "") + pad(m) + " min " + pad(sec) + " s";
+    }
+    function span(ms) {
+      var minutes = Math.round(Math.abs(ms) / 60000), h = Math.floor(minutes / 60), m = minutes % 60;
+      return m === 30 ? h + "½ h" : m ? (h ? h + " h " : "") + m + " min" : h + " h";
+    }
+    function zoneName(zone, at) {
+      var city = zone.split("/").pop().replace(/_/g, " ");
+      var long = new Intl.DateTimeFormat("en-US", { timeZone: zone, timeZoneName: "long" }).formatToParts(at)
+        .filter(function (p) { return p.type === "timeZoneName"; })[0];
+      return city + (long ? ", " + long.value : "");
+    }
+
+    function render() {
+      var zone = select.value;
+      var now = params.get("now") ? Date.parse(params.get("now")) : Date.now();
+      var xbox = midnight(zone);
+      var ps5 = store === "na" ? PS5_US_CANADA : xbox;
+      document.getElementById("zone-name").textContent = zoneName(zone, xbox);
+      [["ps5", ps5], ["xbox", xbox]].forEach(function (row) {
+        var el = document.getElementById(row[0]);
+        el.querySelector(".when").textContent = when(row[1], zone);
+        el.querySelector(".left").textContent = left(row[1], now);
+        var pill = el.querySelector(".pill"), other = row[0] === "ps5" ? xbox : ps5;
+        pill.hidden = row[1] >= other;
+        pill.className = "pill " + row[0];
+        pill.textContent = span(other - row[1]) + " earlier";
+      });
+      buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.store === store)); });
+    }
+
+    var zones = (Intl.supportedValuesOf ? Intl.supportedValuesOf("timeZone") : []).slice();
+    if (zones.indexOf(detected) < 0) zones.unshift(detected);
+    zones.forEach(function (z) {
+      var o = document.createElement("option");
+      o.value = z;
+      o.textContent = z.replace(/_/g, " ").replace(/\//g, " / ");
+      select.appendChild(o);
+    });
+    select.value = detected;
+    store = US_CANADA.test(detected) ? "na" : "other";
+
+    select.addEventListener("change", function () { store = US_CANADA.test(select.value) ? "na" : "other"; render(); });
+    buttons.forEach(function (b) { b.addEventListener("click", function () { store = b.dataset.store; render(); }); });
+
+    card.hidden = false;
+    render();
+    setInterval(render, 1000);
+  })();
+</script>
+</body>
+</html>

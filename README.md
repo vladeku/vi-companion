@@ -5,6 +5,7 @@ Privacy policy, terms of use and support page for Backseat, an unofficial fan ap
 - `privacy/` and `terms/`: the app's Settings and its App Store listing link to these two addresses.
 - `support/`: the contact address; the listing's Support URL points here.
 - `index.html`: the landing page, written for after the game's release: cheat codes, news, guides, questions. `404.html`: any other address.
+- `unlock-times/`: when GTA VI unlocks on PS5 and Xbox, in the visitor's own time zone, with the US and Canada table. The moments in its script follow `Shared/launch.json` in the app's repository; change both together. `assets/unlock-times/og.png` is its link preview, written by `scripts/social-unlock-times.py` there.
 - `assets/landing/`: the phones on the landing (simulator captures in Apple's iPhone 18 Pro Max bezel, top part only) and `og.png`, the link preview. The code screens show GTA V codes on PS5 as stand-ins; take them again once the app has the real codes.
 - `assets/fonts/`: Anton, the icon's typeface, cut to Latin, under the SIL Open Font License (`OFL-Anton.txt`).
 
