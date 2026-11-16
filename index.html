@@ -173,15 +173,6 @@
   .legend li { display: grid; grid-template-columns: 120px 1fr; gap: 14px; align-items: baseline; font-size: 15px; color: var(--muted); }
   .legend .chip { justify-self: start; }
 
-  /* Also in the app */
-  .extras { padding-block: clamp(56px, 8vw, 96px) 0; }
-  .extras h2 { font-size: 13px; }
-  .extras ul { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 22px; border-top: 1px solid var(--line); }
-  .extras li { padding: 22px 24px 0 0; }
-  .extras li + li { padding-left: 24px; border-left: 1px solid var(--line); }
-  .extras b { display: block; font-size: 17px; }
-  .extras span { display: block; color: var(--muted); font-size: 15px; margin-top: 4px; }
-
   /* Questions */
   .faq { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: clamp(32px, 6vw, 88px); padding-block: clamp(72px, 10vw, 128px); }
   .faq h2 { font-size: clamp(42px, 5vw, 64px); position: sticky; top: 96px; }
@@ -218,9 +209,6 @@
     .panel.flip .panel-phone { order: 0; }
     .panel-copy { padding-block: 36px 0; }
     .panel-phone { justify-self: center; width: min(88%, 360px); padding-top: 36px; }
-    .extras ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .extras li, .extras li + li { padding: 20px 16px 20px 0; border-left: 0; border-bottom: 1px solid var(--line); }
-    .extras li:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
     .faq { grid-template-columns: 1fr; }
     .faq h2 { position: static; }
   }
@@ -229,8 +217,6 @@
     .combo { padding: 16px 14px 14px; border-radius: 20px; }
     .combo-console { display: none; }
     .legend li { grid-template-columns: 1fr; gap: 6px; }
-    .extras ul { grid-template-columns: 1fr; }
-    .extras li:nth-child(even) { padding-left: 0; border-left: 0; }
     .faq details p { padding-right: 0; }
     .store img { height: 52px; }
   }
@@ -370,16 +356,6 @@
       </div>
     </section>
   </div>
-
-  <section class="wrap extras" aria-labelledby="extras-title">
-    <h2 class="eyebrow" id="extras-title">Also in the app</h2>
-    <ul>
-      <li><b>PS5 and Xbox</b><span>Switch consoles from the badge at the top of the screen.</span></li>
-      <li><b>Widgets</b><span>On the Home Screen and the Lock Screen.</span></li>
-      <li><b>23 languages</b><span>English, Español, Deutsch, Русский, 日本語 and 18 more.</span></li>
-      <li><b>No account</b><span>Nothing to sign up for. Open it and look up a code.</span></li>
-    </ul>
-  </section>
 
   <section class="wrap faq" id="questions" aria-labelledby="faq-title">
     <h2 class="display" id="faq-title">Questions</h2>
