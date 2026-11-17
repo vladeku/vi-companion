@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Backseat: cheat codes, news and guides for GTA VI</title>
-<meta name="description" content="Backseat shows GTA VI cheat codes with the buttons for your PS5 or Xbox, plus news and short guides. A free, unofficial fan app for iPhone.">
+<meta name="description" content="Backseat shows GTA VI cheat codes with the buttons for your PS5 or Xbox and reads them aloud. Ask Siri for a code or keep one in a widget. A free, unofficial fan app for iPhone.">
 <meta name="theme-color" content="#0F0A1C">
 <meta name="apple-itunes-app" content="app-id=6830724358">
 <link rel="icon" type="image/png" href="favicon.png">
@@ -13,9 +13,9 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Backseat">
 <meta property="og:title" content="Backseat: GTA VI cheat codes, guides and more">
-<meta property="og:description" content="Backseat shows GTA VI cheat codes with the buttons for your PS5 or Xbox, plus news and short guides. A free, unofficial fan app for iPhone.">
+<meta property="og:description" content="Backseat shows GTA VI cheat codes with the buttons for your PS5 or Xbox and reads them aloud. Ask Siri for a code or keep one in a widget. A free, unofficial fan app for iPhone.">
 <meta property="og:url" content="https://getbackseat.app/">
-<meta property="og:image" content="https://getbackseat.app/assets/landing/og.png?v=4">
+<meta property="og:image" content="https://getbackseat.app/assets/landing/og.png?v=5">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -26,10 +26,11 @@
   "@type": "MobileApplication",
   "name": "Backseat",
   "url": "https://getbackseat.app/",
-  "description": "Backseat shows GTA VI cheat codes with the buttons for your PS5 or Xbox, plus news and short guides. A free, unofficial fan app for iPhone.",
+  "description": "Backseat shows GTA VI cheat codes with the buttons for your PS5 or Xbox and reads them aloud. Ask Siri for a code or keep one in a widget. A free, unofficial fan app for iPhone.",
   "operatingSystem": "iOS 26.0 or later",
   "applicationCategory": "EntertainmentApplication",
   "installUrl": "https://apps.apple.com/app/id6830724358",
+  "featureList": "Cheat codes with the buttons for PS5 and Xbox Series X|S, Read Aloud, Siri and Shortcuts, Spotlight, Home Screen and Lock Screen widgets, news, guides",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -105,7 +106,7 @@
   .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 60px; }
   .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-size: 17px; font-weight: 800; letter-spacing: -.01em; }
   .brand img { width: 32px; height: 32px; border-radius: 8px; }
-  .top nav { display: flex; align-items: center; gap: 28px; font-size: 15px; }
+  .top nav { display: flex; align-items: center; gap: 24px; font-size: 15px; }
   .top nav a { text-decoration: none; color: var(--muted); }
   .top nav a:hover { color: var(--ink); }
   .top nav .get { color: var(--ink); font-weight: 600; padding: 7px 14px; border-radius: 999px; background: rgba(255, 255, 255, .1); }
@@ -137,7 +138,7 @@
   .combo-name { font-size: 17px; font-weight: 700; }
   .combo-console { margin-left: auto; font-size: 13px; color: var(--muted); }
   .keys { list-style: none; display: flex; align-items: center; gap: min(10px, 1.5cqi); margin-top: 14px; font-size: min(44px, 8cqi); }
-  .key { flex: none; width: 1em; height: 1em; color: var(--ink); display: grid; place-items: center; transition: opacity .18s ease, transform .12s ease; }
+  .key { position: relative; flex: none; width: 1em; height: 1em; color: var(--ink); display: grid; place-items: center; transition: opacity .2s ease; }
   .key svg { width: 1em; height: 1em; overflow: visible; }
   .key.triangle { color: var(--k-triangle); }
   .key.circle { color: var(--k-circle); }
@@ -145,14 +146,17 @@
   .key.cross { color: var(--k-cross); }
   .shoulder { width: auto; height: .74em; min-width: 1.18em; padding: 0 .12em; border: max(2px, .055em) solid currentColor; border-radius: .14em .14em .3em .3em; font-size: inherit; }
   .shoulder span { font-size: .38em; font-weight: 800; letter-spacing: .02em; line-height: 1; }
-  .combo-dial { display: flex; align-items: center; gap: 10px; margin-top: 14px; font-size: 15px; color: var(--muted); transition: opacity .3s ease; }
+  /* Read Aloud, as the app draws it: a pink ring moves from press to press and the presses already called fade. */
+  .combo-read { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 6px 14px 6px 11px; border-radius: 999px; font-size: 15px; font-weight: 600; color: var(--pink); background: rgba(255, 255, 255, .07); border: 1px solid var(--line); }
+  .combo-read svg { width: 18px; height: 18px; flex: none; }
+  .combo-read .i-stop, .combo.reading .combo-read .i-read { display: none; }
+  .combo.reading .combo-read .i-stop { display: block; }
+  .combo-dial { display: flex; align-items: center; gap: 10px; margin-top: 14px; font-size: 15px; color: var(--muted); }
   .combo-dial svg { width: 18px; height: 18px; flex: none; }
   .combo-dial b { font-family: var(--mono); font-size: 16px; font-weight: 600; color: var(--ink); letter-spacing: .01em; }
-  .js .key { opacity: .26; }
-  .js .key.on { opacity: 1; }
-  .js .key.now { transform: translateY(.06em) scale(.9); }
-  .js .combo .chip, .js .combo-dial { opacity: 0; transition: opacity .3s ease; }
-  .js .combo.done .chip, .js .combo.done .combo-dial { opacity: 1; }
+  .js .key.on { opacity: .28; }
+  .js .key.now::after { content: ""; position: absolute; inset: -.16em; border-radius: 50%; border: max(2px, .05em) solid var(--pink); background: rgba(255, 79, 153, .16); box-shadow: 0 0 .4em rgba(255, 79, 153, .55); }
+  .js .shoulder.now::after { inset: -.22em -.18em; border-radius: .26em .26em .4em .4em; }
 
   /* Feature panels */
   .features { display: grid; gap: clamp(20px, 3vw, 32px); padding-block: clamp(56px, 8vw, 104px) 0; }
@@ -204,8 +208,10 @@
   footer p + p { margin-top: 8px; }
   footer p { max-width: 62em; }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1040px) {
     .top nav a:not(.get) { display: none; }
+  }
+  @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; gap: 0; }
     .hero-copy { padding-block: 44px 8px; }
     .hero-phone { width: min(86%, 360px); padding-top: 36px; }
@@ -227,7 +233,7 @@
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .key, .combo-dial, .js .combo .chip { transition: none; }
+    .key { transition: none; }
   }
 </style>
 </head>
@@ -257,6 +263,8 @@
       </g>
       <path d="M3.2 10.4v7.2h6.4l3.6-3.6-3.6-3.6Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
     </symbol>
+    <symbol id="k-speaker" viewBox="0 0 24 24"><path d="M3.5 9.2h3.2L11.5 5v14l-4.8-4.2H3.5Z" fill="currentColor"/><path d="M15 9.2a4 4 0 0 1 0 5.6M17.8 6.6a7.6 7.6 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="k-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2.5" fill="currentColor"/></symbol>
     <symbol id="k-phone" viewBox="0 0 24 24"><path d="M6.6 3.5 9 3.2l1.6 4.1-2 1.5a12 12 0 0 0 6.6 6.6l1.5-2 4.1 1.6-.3 2.4a2 2 0 0 1-2.1 1.7A16.6 16.6 0 0 1 4.9 5.6a2 2 0 0 1 1.7-2.1Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
   </defs>
 </svg>
@@ -267,8 +275,10 @@
     <nav aria-label="Sections">
       <a href="unlock-times/">Unlock times</a>
       <a href="#codes">Codes</a>
+      <a href="#read-aloud">Read Aloud</a>
+      <a href="#siri">Siri</a>
+      <a href="#widgets">Widgets</a>
       <a href="#news">News</a>
-      <a href="#guides">Guides</a>
       <a href="#questions">Questions</a>
       <a class="get" href="https://apps.apple.com/app/id6830724358">Get the app</a>
     </nav>
@@ -301,18 +311,19 @@
             <li class="key cross"><svg><use href="#k-cross"/></svg></li>
             <li class="key triangle"><svg><use href="#k-triangle"/></svg></li>
           </ol>
+          <p class="combo-read" aria-hidden="true"><svg class="i-read"><use href="#k-speaker"/></svg><svg class="i-stop"><use href="#k-stop"/></svg><span>Read Aloud</span></p>
           <p class="combo-dial" aria-hidden="true"><svg><use href="#k-phone"/></svg>or dial <b>1-999-724-654-5537</b></p>
         </figure>
 
-        <p class="lede">Backseat shows cheat codes with the buttons for your PlayStation&nbsp;5 or Xbox Series&nbsp;X|S. You also get the day’s news and short guides, each with a link to its source.</p>
+        <p class="lede">Backseat shows each cheat code as the buttons for your PlayStation&nbsp;5 or Xbox Series&nbsp;X|S and reads it out press by press. Ask Siri for a code without putting down the controller, or keep your favorites in a widget. You also get the day’s news and short guides, each with a link to its source.</p>
         <div class="cta">
           <a class="store" href="https://apps.apple.com/app/id6830724358"><img src="assets/app-store-badge.svg" alt="Download on the App Store" width="168" height="56"></a>
           <p class="cta-note">Free for iPhone. Install it before the next mission.</p>
         </div>
       </div>
       <div class="hero-phone">
-        <img src="assets/landing/phone-codes-player.webp" width="840" height="1029" fetchpriority="high"
-          alt="The Codes screen in Backseat with PlayStation 5 picked: Invincibility and Max health and armor, each with its buttons and a number to dial.">
+        <img src="assets/landing/phone-codes-player.webp" width="840" height="1120" fetchpriority="high"
+          alt="The Cheats screen in Backseat with PlayStation 5 picked: Favorites and All, a search field, a card with the Siri phrase “Read the Invincibility code in Backseat”, and Invincibility with its buttons and a Read Aloud button.">
       </div>
     </div>
   </section>
@@ -324,17 +335,65 @@
         <h2 class="display" id="codes-title">Your console, your buttons</h2>
         <p>Pick PlayStation&nbsp;5 or Xbox Series&nbsp;X|S once, and the app shows each code as the buttons on your controller, in the order you press them. If the game also takes a code on the in-game phone, you get the number to dial.</p>
         <dl class="points">
+          <div><dt>Favorites first</dt><dd>Star the codes you use to keep them under Favorites. Type a name in the search field to find any other code.</dd></div>
           <div><dt>No app update for new codes</dt><dd>We add new codes on our server, and you see them without updating the app. Turn on notifications and we’ll tell you when they arrive.</dd></div>
-          <div><dt>Groups by type</dt><dd>You find the helicopter under Vehicles without scrolling past the armor.</dd></div>
         </dl>
       </div>
       <div class="panel-phone">
-        <img src="assets/landing/phone-codes-vehicles.webp" width="840" height="984" loading="lazy"
-          alt="Vehicle codes in Backseat: Attack helicopter and Sports car with PlayStation 5 buttons and phone numbers.">
+        <img src="assets/landing/phone-codes-favorites.webp" width="840" height="1029" loading="lazy"
+          alt="Favorites in Backseat: Invincibility and Attack helicopter, starred, with PlayStation 5 buttons, phone numbers and Read Aloud buttons.">
       </div>
     </section>
 
-    <section class="panel flip" id="news" aria-labelledby="news-title">
+    <section class="panel flip" id="read-aloud" aria-labelledby="read-title">
+      <div class="panel-copy">
+        <p class="eyebrow">Read Aloud</p>
+        <h2 class="display" id="read-title">Keep your eyes on the TV</h2>
+        <p>Tap Read Aloud and look back at the game. After a short pause, a voice calls out each press while a ring moves across the buttons, and you feel a tap for each one. It reads phone numbers digit by digit.</p>
+        <dl class="points">
+          <div><dt>Three speeds</dt><dd>Slow leaves time to find each button. Pick the speed in Settings.</dd></div>
+          <div><dt>Works on silent</dt><dd>The voice plays when your iPhone is on silent, and the screen stays on until the code ends.</dd></div>
+          <div><dt>In your language</dt><dd>The voice speaks the language of the app: English and 22 more.</dd></div>
+        </dl>
+      </div>
+      <div class="panel-phone">
+        <img src="assets/landing/phone-codes-reading.webp" width="840" height="1046" loading="lazy"
+          alt="Read Aloud in Backseat: a pink ring sits on R1 in the Attack helicopter code, the presses already called are faded, and the button reads Stop.">
+      </div>
+    </section>
+
+    <section class="panel" id="siri" aria-labelledby="siri-title">
+      <div class="panel-copy">
+        <p class="eyebrow">Siri and Shortcuts</p>
+        <h2 class="display" id="siri-title">Ask Siri, keep the controller</h2>
+        <p>Say “Read the Invincibility code in Backseat”, and the app opens the code and reads it out while you hold the controller. Ask “What’s the Parachute code in Backseat” and Siri tells you the buttons. “Show cheat codes in Backseat” opens the list.</p>
+        <dl class="points">
+          <div><dt>Every code, by name</dt><dd>Each code in the app is a Siri and Shortcuts action. Siri learns new codes once the app has loaded them.</dd></div>
+          <div><dt>Spotlight too</dt><dd>Type a code’s name in Spotlight to open it in Backseat.</dd></div>
+        </dl>
+      </div>
+      <div class="panel-phone">
+        <img src="assets/landing/phone-siri-shortcuts.webp" width="840" height="937" loading="lazy"
+          alt="Backseat in the Shortcuts app: Cheat Codes, Get Cheat Code with an action for each code, and Read Code Aloud.">
+      </div>
+    </section>
+
+    <section class="panel flip" id="widgets" aria-labelledby="widgets-title">
+      <div class="panel-copy">
+        <p class="eyebrow">Widgets</p>
+        <h2 class="display" id="widgets-title">Codes on your Home Screen</h2>
+        <p>The Cheat code widget shows your favorites with the buttons for your console, or one code you pick. With no favorites, it shows a code of the day. The Countdown widget counts down to the next date we know of.</p>
+        <dl class="points">
+          <div><dt>Lock Screen with Backseat Pro</dt><dd>Put a code under the clock, so it’s there when you pick up your iPhone. Pro is a one-time purchase and also lifts the limit of three favorites.</dd></div>
+        </dl>
+      </div>
+      <div class="panel-phone">
+        <img src="assets/landing/phone-widgets.webp" width="840" height="937" loading="lazy"
+          alt="The large Cheat code widget on the Home Screen: Invincibility, Attack helicopter and Sports car with Xbox Series X|S buttons.">
+      </div>
+    </section>
+
+    <section class="panel" id="news" aria-labelledby="news-title">
       <div class="panel-copy">
         <p class="eyebrow">News</p>
         <h2 class="display" id="news-title">The day’s news in a few lines</h2>
@@ -351,7 +410,7 @@
       </div>
     </section>
 
-    <section class="panel" id="guides" aria-labelledby="guides-title">
+    <section class="panel flip" id="guides" aria-labelledby="guides-title">
       <div class="panel-copy">
         <p class="eyebrow">Guides</p>
         <h2 class="display" id="guides-title">Tips that save you a reload</h2>
@@ -376,16 +435,24 @@
         <p>Some cheats also work through your character’s phone in the game. Open the phone, type the number on its keypad and call. The cheat turns on the same way as with the buttons. If a code works both ways, the app shows both.</p>
       </details>
       <details>
+        <summary>Can Siri read a code to me?</summary>
+        <p>Yes. Say “Read the Invincibility code in Backseat”, with the name of any code, and Backseat opens it and reads out the presses. Ask “What’s the Invincibility code in Backseat” and Siri tells you the buttons. Siri knows every code in the app, including ones we add after you install it.</p>
+      </details>
+      <details>
         <summary>Do I need to update the app to get new codes?</summary>
-        <p>No. The app loads codes, news and guides from our server when you open it. Pull down on any screen to check now.</p>
+        <p>No. The app loads codes, news and guides from our server when you open it, and Siri, Spotlight and the widgets get the new codes too. Pull down on any screen to check now.</p>
       </details>
       <details>
         <summary>Which consoles does it cover?</summary>
         <p>PlayStation 5, including PS5 Pro, and Xbox Series X|S. Pick yours the first time you open the app and change it any time from the badge at the top of the screen.</p>
       </details>
       <details>
+        <summary>Which widgets are there?</summary>
+        <p>Two. Cheat code shows your favorites, a code you pick or a code of the day, in three sizes on the Home Screen and, with Backseat Pro, on the Lock Screen. Countdown counts down to the next date we know of.</p>
+      </details>
+      <details>
         <summary>What does it cost?</summary>
-        <p>Backseat is free to download on the App Store.</p>
+        <p>Backseat is free to download on the App Store. Backseat Pro, a one-time purchase with no subscription, puts codes on your Lock Screen and lifts the limit of three favorites.</p>
       </details>
     </div>
   </section>
@@ -411,7 +478,8 @@
 </footer>
 
 <script>
-  // The combo in the hero: presses light up one by one, then the status and the number appear.
+  // The combo in the hero plays Read Aloud: after a short pause a ring moves from press to press, the presses
+  // already called fade, and the button reads Stop until the code ends.
   (function () {
     var combo = document.querySelector(".combo");
     if (!combo || !("IntersectionObserver" in window)) return;
@@ -419,35 +487,32 @@
     if (reduce.matches) return;
     document.documentElement.classList.add("js");
     var keys = combo.querySelectorAll(".key");
-    var step = 0, timer = null;
+    var label = combo.querySelector(".combo-read span");
+    var step = -1, timer = null;
 
-    function show(count) {
+    function show(current, reading) {
       for (var i = 0; i < keys.length; i++) {
-        keys[i].classList.toggle("on", i < count);
-        keys[i].classList.toggle("now", i === count - 1);
+        keys[i].classList.toggle("on", reading && i < current);
+        keys[i].classList.toggle("now", reading && i === current);
       }
-      combo.classList.toggle("done", count >= keys.length);
+      combo.classList.toggle("reading", reading);
+      label.textContent = reading ? "Stop" : "Read Aloud";
     }
     function tick() {
       step += 1;
-      if (step <= keys.length) {
-        show(step);
-        timer = setTimeout(function () {
-          keys[step - 1].classList.remove("now");
-          timer = setTimeout(tick, 150);
-        }, 120);
-      } else {
-        timer = setTimeout(function () { step = 0; show(0); timer = setTimeout(tick, 700); }, 2800);
-      }
+      if (step < keys.length) { show(step, true); timer = setTimeout(tick, 480); }
+      else { step = -1; show(-1, false); timer = setTimeout(start, 2600); }
     }
-    function stop() { clearTimeout(timer); timer = null; }
+    // The app waits 0.7 seconds before the first press, long enough to look from the phone to the controller.
+    function start() { step = -1; show(-1, true); timer = setTimeout(tick, 700); }
+    function stop() { clearTimeout(timer); timer = null; step = -1; show(-1, false); }
 
     new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) { if (!timer) { step = 0; show(0); timer = setTimeout(tick, 500); } }
-      else { stop(); show(keys.length); }
+      if (entries[0].isIntersecting) { if (!timer) timer = setTimeout(start, 500); }
+      else stop();
     }).observe(combo);
     reduce.addEventListener("change", function (e) {
-      if (e.matches) { stop(); document.documentElement.classList.remove("js"); show(keys.length); }
+      if (e.matches) { stop(); document.documentElement.classList.remove("js"); }
     });
   })();
 </script>
