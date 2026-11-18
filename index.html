@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Backseat: cheat codes, news and guides for GTA VI</title>
-<meta name="description" content="Backseat shows GTA VI cheat codes with the buttons for your PS5 or Xbox and reads them aloud. Ask Siri for a code or keep one in a widget. A free, unofficial fan app for iPhone.">
+<title>Backseat: cheat codes, trophies and news for GTA VI</title>
+<meta name="description" content="Backseat shows GTA VI cheat codes with the buttons for your PS5 or Xbox and reads them aloud, and tracks your trophies with tips for the hard ones. A free, unofficial fan app for iPhone.">
 <meta name="theme-color" content="#0F0A1C">
 <meta name="apple-itunes-app" content="app-id=6830724358">
 <link rel="icon" type="image/png" href="favicon.png">
@@ -12,10 +12,10 @@
 <link rel="canonical" href="https://getbackseat.app/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Backseat">
-<meta property="og:title" content="Backseat: GTA VI cheat codes, guides and more">
-<meta property="og:description" content="Backseat shows GTA VI cheat codes with the buttons for your PS5 or Xbox and reads them aloud. Ask Siri for a code or keep one in a widget. A free, unofficial fan app for iPhone.">
+<meta property="og:title" content="Backseat: GTA VI cheat codes, trophies and more">
+<meta property="og:description" content="Backseat shows GTA VI cheat codes with the buttons for your PS5 or Xbox and reads them aloud, and tracks your trophies with tips for the hard ones. A free, unofficial fan app for iPhone.">
 <meta property="og:url" content="https://getbackseat.app/">
-<meta property="og:image" content="https://getbackseat.app/assets/landing/og.png?v=5">
+<meta property="og:image" content="https://getbackseat.app/assets/landing/og.png?v=6">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -26,11 +26,11 @@
   "@type": "MobileApplication",
   "name": "Backseat",
   "url": "https://getbackseat.app/",
-  "description": "Backseat shows GTA VI cheat codes with the buttons for your PS5 or Xbox and reads them aloud. Ask Siri for a code or keep one in a widget. A free, unofficial fan app for iPhone.",
+  "description": "Backseat shows GTA VI cheat codes with the buttons for your PS5 or Xbox and reads them aloud, and tracks your trophies with tips for the hard ones. A free, unofficial fan app for iPhone.",
   "operatingSystem": "iOS 26.0 or later",
   "applicationCategory": "EntertainmentApplication",
   "installUrl": "https://apps.apple.com/app/id6830724358",
-  "featureList": "Cheat codes with the buttons for PS5 and Xbox Series X|S, Read Aloud, Siri and Shortcuts, Spotlight, Home Screen and Lock Screen widgets, news, guides",
+  "featureList": "Cheat codes with the buttons for PS5 and Xbox Series X|S, Read Aloud, Siri and Shortcuts, Spotlight, Home Screen and Lock Screen widgets, trophy and achievement tracker, news, guides",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -121,7 +121,7 @@
   .hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 48px; align-items: end; }
   .hero-copy { padding-block: 72px 80px; }
   .hero h1 { font-size: clamp(54px, 7vw, 92px); margin-top: 18px; }
-  /* Until launch night: the link to the unlock times, above the eyebrow. */
+  /* A short line above the eyebrow: what is new. */
   .notice { display: inline-flex; align-items: center; gap: 10px; max-width: 100%; margin-bottom: 22px; padding: 5px 14px 5px 5px; border-radius: 999px; font-size: 15px; font-weight: 600; text-decoration: none; background: rgba(255, 255, 255, .07); border: 1px solid var(--line); }
   .notice:hover { background: rgba(255, 255, 255, .12); }
   .notice b { flex: none; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: var(--violet); }
@@ -263,6 +263,8 @@
       </g>
       <path d="M3.2 10.4v7.2h6.4l3.6-3.6-3.6-3.6Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
     </symbol>
+    <symbol id="k-dpad-up" viewBox="0 0 28 28"><use href="#k-dpad-right" transform="rotate(-90 14 14)"/></symbol>
+    <symbol id="k-dpad-down" viewBox="0 0 28 28"><use href="#k-dpad-right" transform="rotate(90 14 14)"/></symbol>
     <symbol id="k-speaker" viewBox="0 0 24 24"><path d="M3.5 9.2h3.2L11.5 5v14l-4.8-4.2H3.5Z" fill="currentColor"/><path d="M15 9.2a4 4 0 0 1 0 5.6M17.8 6.6a7.6 7.6 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="k-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2.5" fill="currentColor"/></symbol>
     <symbol id="k-phone" viewBox="0 0 24 24"><path d="M6.6 3.5 9 3.2l1.6 4.1-2 1.5a12 12 0 0 0 6.6 6.6l1.5-2 4.1 1.6-.3 2.4a2 2 0 0 1-2.1 1.7A16.6 16.6 0 0 1 4.9 5.6a2 2 0 0 1 1.7-2.1Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
@@ -273,11 +275,11 @@
   <div class="wrap">
     <a class="brand" href="./"><img src="assets/icon-256.png" alt="" width="32" height="32">Backseat</a>
     <nav aria-label="Sections">
-      <a href="unlock-times/">Unlock times</a>
       <a href="#codes">Codes</a>
       <a href="#read-aloud">Read Aloud</a>
       <a href="#siri">Siri</a>
       <a href="#widgets">Widgets</a>
+      <a href="#trophies">Trophies</a>
       <a href="#news">News</a>
       <a href="#questions">Questions</a>
       <a class="get" href="https://apps.apple.com/app/id6830724358">Get the app</a>
@@ -289,33 +291,31 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <a class="notice" href="unlock-times/"><b>Nov 19</b>When GTA VI unlocks for you <span aria-hidden="true">→</span></a>
+        <a class="notice" href="#trophies"><b>New</b>Trophies, with tips for the hard ones <span aria-hidden="true">→</span></a>
         <p class="eyebrow">Unofficial companion for GTA VI</p>
         <h1 class="display">Cheat codes, button by button</h1>
 
-        <figure class="combo" aria-label="Invincibility on PlayStation 5: Right, Cross, Right, Left, Right, R1, Right, Left, Cross, Triangle. Or dial 1-999-724-654-5537 on the in-game phone.">
+        <figure class="combo" aria-label="$250,000 on PlayStation 5: Up, Right, Down, Left, Up, Left, Down, Right. Unlocks when you finish the story.">
           <figcaption class="combo-head" aria-hidden="true">
-            <span class="combo-name">Invincibility</span>
-            <span class="chip chip-confirmed">Confirmed</span>
+            <span class="combo-name">$250,000</span>
+            <span class="chip chip-reported">Reported</span>
             <span class="combo-console">PlayStation 5</span>
           </figcaption>
           <ol class="keys" aria-hidden="true">
+            <li class="key"><svg><use href="#k-dpad-up"/></svg></li>
             <li class="key"><svg><use href="#k-dpad-right"/></svg></li>
-            <li class="key cross"><svg><use href="#k-cross"/></svg></li>
-            <li class="key"><svg><use href="#k-dpad-right"/></svg></li>
+            <li class="key"><svg><use href="#k-dpad-down"/></svg></li>
             <li class="key"><svg><use href="#k-dpad-left"/></svg></li>
-            <li class="key"><svg><use href="#k-dpad-right"/></svg></li>
-            <li class="key shoulder"><span>R1</span></li>
-            <li class="key"><svg><use href="#k-dpad-right"/></svg></li>
+            <li class="key"><svg><use href="#k-dpad-up"/></svg></li>
             <li class="key"><svg><use href="#k-dpad-left"/></svg></li>
-            <li class="key cross"><svg><use href="#k-cross"/></svg></li>
-            <li class="key triangle"><svg><use href="#k-triangle"/></svg></li>
+            <li class="key"><svg><use href="#k-dpad-down"/></svg></li>
+            <li class="key"><svg><use href="#k-dpad-right"/></svg></li>
           </ol>
           <p class="combo-read" aria-hidden="true"><svg class="i-read"><use href="#k-speaker"/></svg><svg class="i-stop"><use href="#k-stop"/></svg><span>Read Aloud</span></p>
-          <p class="combo-dial" aria-hidden="true"><svg><use href="#k-phone"/></svg>or dial <b>1-999-724-654-5537</b></p>
+          <p class="combo-dial" aria-hidden="true">Unlocks when you finish the story</p>
         </figure>
 
-        <p class="lede">Backseat shows each cheat code as the buttons for your PlayStation&nbsp;5 or Xbox Series&nbsp;X|S and reads it out press by press. Ask Siri for a code without putting down the controller, or keep your favorites in a widget. You also get the day’s news and short guides, each with a link to its source.</p>
+        <p class="lede">Backseat shows each cheat code as the buttons for your PlayStation&nbsp;5 or Xbox Series&nbsp;X|S and reads it out press by press. Ask Siri for a code without putting down the controller, keep your favorites in a widget, and tick off your trophies as they pop. News and short guides come with a link to their source.</p>
         <div class="cta">
           <a class="store" href="https://apps.apple.com/app/id6830724358"><img src="assets/app-store-badge.svg" alt="Download on the App Store" width="168" height="56"></a>
           <p class="cta-note">Free for iPhone. Install it before the next mission.</p>
@@ -323,7 +323,7 @@
       </div>
       <div class="hero-phone">
         <img src="assets/landing/phone-codes-player.webp" width="840" height="1120" fetchpriority="high"
-          alt="The Cheats screen in Backseat with PlayStation 5 picked: Favorites and All, a search field, a card with the Siri phrase “Read the Invincibility code in Backseat”, and Invincibility with its buttons and a Read Aloud button.">
+          alt="The Cheats screen in Backseat with PlayStation 5 picked: Favorites, a search field, a card with the Siri phrase “Read the $250,000 code in Backseat”, and $250,000 with its D-pad presses and a Read Aloud button.">
       </div>
     </div>
   </section>
@@ -333,15 +333,16 @@
       <div class="panel-copy">
         <p class="eyebrow">Cheat codes</p>
         <h2 class="display" id="codes-title">Your console, your buttons</h2>
-        <p>Pick PlayStation&nbsp;5 or Xbox Series&nbsp;X|S once, and the app shows each code as the buttons on your controller, in the order you press them. If the game also takes a code on the in-game phone, you get the number to dial.</p>
+        <p>Pick PlayStation&nbsp;5 or Xbox Series&nbsp;X|S once, and the app shows each code as the presses on your controller, in order. Each code also says what it does and what unlocks it. In GTA&nbsp;VI you can use cheats once you finish the story, and many need a challenge too.</p>
         <dl class="points">
+          <div><dt>How to enter one</dt><dd>Press Up on the D-pad to take out the phone, hold L1 and press R1 (LB and RB on Xbox), then enter the code. The app keeps these steps above the list.</dd></div>
           <div><dt>Favorites first</dt><dd>Star the codes you use to keep them under Favorites. Type a name in the search field to find any other code.</dd></div>
           <div><dt>No app update for new codes</dt><dd>We add new codes on our server, and you see them without updating the app. Turn on notifications and we’ll tell you when they arrive.</dd></div>
         </dl>
       </div>
       <div class="panel-phone">
         <img src="assets/landing/phone-codes-favorites.webp" width="840" height="1029" loading="lazy"
-          alt="Favorites in Backseat: Invincibility and Attack helicopter, starred, with PlayStation 5 buttons, phone numbers and Read Aloud buttons.">
+          alt="All codes in Backseat: the note on when cheats work and how to enter them, and $250,000, marked Reported, with its PlayStation 5 presses.">
       </div>
     </section>
 
@@ -349,7 +350,7 @@
       <div class="panel-copy">
         <p class="eyebrow">Read Aloud</p>
         <h2 class="display" id="read-title">Keep your eyes on the TV</h2>
-        <p>Tap Read Aloud and look back at the game. After a short pause, a voice in your language calls out each press while a ring moves across the buttons, and you feel a tap for each one. You hear phone numbers digit by digit.</p>
+        <p>Tap Read Aloud and look back at the game. After a short pause, a voice in your language calls out each press while a ring moves across the buttons, and you feel a tap for each one.</p>
         <dl class="points">
           <div><dt>Three speeds</dt><dd>On Slow you have time to find each button. Pick the speed in Settings.</dd></div>
           <div><dt>Works on silent</dt><dd>The voice plays when your iPhone is on silent, and the screen stays on until the code ends.</dd></div>
@@ -357,7 +358,7 @@
       </div>
       <div class="panel-phone">
         <img src="assets/landing/phone-codes-reading.webp" width="840" height="1046" loading="lazy"
-          alt="Read Aloud in Backseat: a pink ring sits on R1 in the Attack helicopter code, the presses it already called have faded, and the button reads Stop.">
+          alt="Read Aloud in Backseat: a pink ring sits on the fourth press of $250,000, the presses it already called have faded, and the button reads Stop.">
       </div>
     </section>
 
@@ -365,15 +366,15 @@
       <div class="panel-copy">
         <p class="eyebrow">Siri and Shortcuts</p>
         <h2 class="display" id="siri-title">Ask Siri, keep the controller</h2>
-        <p>Say “Read the Invincibility code in Backseat” while you hold the controller, and the app opens the code and reads it out. Ask “What’s the Parachute code in Backseat” and Siri tells you the buttons. Say “Show cheat codes in Backseat” to open the list.</p>
+        <p>Say “Read the $250,000 code in Backseat” while you hold the controller, and the app opens the code and reads it out. Ask “What’s the Max Ammo code in Backseat” and Siri tells you the buttons. Say “Show cheat codes in Backseat” to open the list.</p>
         <dl class="points">
-          <div><dt>Codes by name</dt><dd>Each code in the app is a Siri and Shortcuts action. Siri picks up new codes the next time you open the app.</dd></div>
+          <div><dt>Codes by name</dt><dd>Siri and Shortcuts know every code in the app by name, and pick up new ones the next time you open it.</dd></div>
           <div><dt>Spotlight too</dt><dd>Type a code’s name in Spotlight to open it in Backseat.</dd></div>
         </dl>
       </div>
       <div class="panel-phone">
         <img src="assets/landing/phone-siri-shortcuts.webp" width="840" height="937" loading="lazy"
-          alt="Backseat in the Shortcuts app: Cheat Codes, Get Cheat Code with an action for each code, and Read Code Aloud.">
+          alt="Backseat in the Shortcuts app: Get Cheat Code, Read Code Aloud and Cheat Codes.">
       </div>
     </section>
 
@@ -383,16 +384,32 @@
         <h2 class="display" id="widgets-title">Codes on your Home Screen</h2>
         <p>The Cheat code widget shows your favorites with the buttons for your console, or one code you pick. If you haven’t starred any, it shows a code of the day. The Countdown widget counts down to the next date we know of.</p>
         <dl class="points">
-          <div><dt>Lock Screen with Backseat Pro</dt><dd>Put a code under the clock, so it’s there when you pick up your iPhone. Pro is a one-time purchase and lets you star more than three codes.</dd></div>
+          <div><dt>Lock Screen with Backseat Pro</dt><dd>Put a code under the clock, so it’s there when you pick up your iPhone. Pro is a one-time purchase. With it you can star more than three codes and read the trophy tips.</dd></div>
         </dl>
       </div>
       <div class="panel-phone">
         <img src="assets/landing/phone-widgets.webp" width="840" height="937" loading="lazy"
-          alt="The large Cheat code widget on the Home Screen: Invincibility, Attack helicopter and Sports car with Xbox Series X|S buttons.">
+          alt="Backseat widgets on the Home Screen: a small and a medium Cheat code widget with $250,000 and its Xbox Series X|S presses.">
       </div>
     </section>
 
-    <section class="panel" id="news" aria-labelledby="news-title">
+    <section class="panel" id="trophies" aria-labelledby="trophies-title">
+      <div class="panel-copy">
+        <p class="eyebrow">Trophies · new in 1.3</p>
+        <h2 class="display" id="trophies-title">Every trophy, ticked off</h2>
+        <p>All 55 trophies and achievements in one list, with the grade on PS5 or the Gamerscore on Xbox. Tick one off when it pops and watch the count climb. Story trophies name missions, so Backseat covers them until you tap one.</p>
+        <dl class="points">
+          <div><dt>Tips with Backseat Pro</dt><dd>How to get the long ones, from 250 stunts to 100% completion, in a few lines with a link to the guide.</dd></div>
+          <div><dt>Cheats cost trophies</dt><dd>After a cheat you can’t earn trophies for the rest of the session, and the Cheats and Trophies tabs both remind you.</dd></div>
+        </dl>
+      </div>
+      <div class="panel-phone">
+        <img src="assets/landing/phone-trophies.webp" width="840" height="1300" loading="lazy"
+          alt="Trophies in Backseat on PlayStation 5: 1 of 55 earned, the note about hidden trophies, and Completion with Vice Got a Price!, A Long Road ticked off and One Last Thing, each with a locked tip.">
+      </div>
+    </section>
+
+    <section class="panel flip" id="news" aria-labelledby="news-title">
       <div class="panel-copy">
         <p class="eyebrow">News</p>
         <h2 class="display" id="news-title">The day’s news in a few lines</h2>
@@ -405,11 +422,11 @@
       </div>
       <div class="panel-phone">
         <img src="assets/landing/phone-intel-news.webp" width="840" height="905" loading="lazy"
-          alt="News in Backseat: First patch is out, marked Reported, and Remote Play on both consoles, marked Confirmed, each with its source.">
+          alt="News in Backseat: 61 cheats, after the story, marked Reported, and 99 on Metacritic, marked Confirmed, each with its source.">
       </div>
     </section>
 
-    <section class="panel flip" id="guides" aria-labelledby="guides-title">
+    <section class="panel" id="guides" aria-labelledby="guides-title">
       <div class="panel-copy">
         <p class="eyebrow">Guides</p>
         <h2 class="display" id="guides-title">Tips that save you a reload</h2>
@@ -430,16 +447,20 @@
         <p>No. Backseat is an unofficial fan app from an independent developer. It isn’t affiliated with, endorsed or sponsored by Rockstar Games or Take-Two Interactive.</p>
       </details>
       <details>
-        <summary>What are the numbers under some codes?</summary>
-        <p>Some cheats also work through your character’s phone in the game. Open the phone, type the number on its keypad and call. The cheat turns on the same way as with the buttons. If a code works both ways, the app shows both.</p>
+        <summary>How do I enter a cheat?</summary>
+        <p>Finish the story first: cheats stay locked until then, and many also need a challenge from Progress › Cheats. Then press Up on the D-pad to take out the phone, hold L1 and press R1 (LB and RB on Xbox), and enter the code on the D-pad. After a cheat you can’t save or earn trophies for the rest of the session, so save before you start.</p>
       </details>
       <details>
         <summary>Can Siri read a code to me?</summary>
-        <p>Yes. Say “Read the Invincibility code in Backseat”, or name another code, and Backseat opens it and reads out the presses. Ask “What’s the Invincibility code in Backseat” and Siri tells you the buttons. Codes we add later work too, once you open the app.</p>
+        <p>Yes. Say “Read the $250,000 code in Backseat”, or name another code, and Backseat opens it and reads out the presses. Ask “What’s the $250,000 code in Backseat” and Siri tells you the buttons. Codes we add later work too, once you open the app.</p>
       </details>
       <details>
         <summary>Do I need to update the app to get new codes?</summary>
         <p>No. The app loads codes, news and guides from our server when you open it, and Siri, Spotlight and the widgets get the new codes too. Pull down on any screen to check now.</p>
+      </details>
+      <details>
+        <summary>Does it track my trophies?</summary>
+        <p>From version 1.3, the Trophies tab lists all 55 trophies and achievements, and you tick them off as you earn them. Backseat doesn’t sign in to your PlayStation or Xbox account, so it can’t see which ones you have.</p>
       </details>
       <details>
         <summary>Which consoles does it cover?</summary>
@@ -451,7 +472,7 @@
       </details>
       <details>
         <summary>What does it cost?</summary>
-        <p>Backseat is free to download on the App Store. Backseat Pro is a one-time purchase with no subscription. It puts codes on your Lock Screen and lets you star more than three.</p>
+        <p>Backseat is free to download on the App Store. Backseat Pro is a one-time purchase with no subscription. It puts codes on your Lock Screen, lets you star more than three and opens the trophy tips.</p>
       </details>
     </div>
   </section>
